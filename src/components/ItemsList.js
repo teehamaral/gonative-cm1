@@ -9,7 +9,7 @@ import Post from 'components/Post';
 
 const styles = StyleSheet.create({
   itemsList: {
-    padding: 20
+    padding: 20,
   },
 });
 
