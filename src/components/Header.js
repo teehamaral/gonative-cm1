@@ -29,7 +29,7 @@ export default class Header extends Component {
   render() {
     return (
       <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>{ this.props.title }</Text>
+        <Text style={styles.headerText}>{this.props.title}</Text>
       </View>
     );
   }
