@@ -1,4 +1,4 @@
-package com.challengemoduleone;
+package com.gonativecm1;
 
 import android.app.Application;
 
