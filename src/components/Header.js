@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   StyleSheet,
@@ -22,15 +23,21 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 16,
     fontWeight: 'bold',
-  }
+  },
 });
 
-export default class Header extends Component {
-  render() {
-    return (
-      <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>{this.props.title}</Text>
-      </View>
-    );
-  }
-}
+const Header = (props) => (
+  <View style={styles.headerContainer}>
+    <Text style={styles.headerText}>{props.title}</Text>
+  </View>
+);
+
+Header.defaultProps = {
+  title: 'GoNative App',
+};
+
+Header.propTypes = {
+  title: PropTypes.string,
+};
+
+export default Header;

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   StyleSheet,
@@ -35,15 +36,19 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Post extends Component {
-  render() {
-    return (
-      <View style={styles.item}>
-        <Text style={styles.itemTitle}>{this.props.title}</Text>
-        <Text style={styles.itemAuthor}>{this.props.author}</Text>
-        <View style={styles.divider} />
-        <Text style={styles.itemDescription}>{this.props.description}</Text>
-      </View>
-    );
-  }
-}
+const Post = (props) => (
+  <View style={styles.item}>
+    <Text style={styles.itemTitle}>{props.title}</Text>
+    <Text style={styles.itemAuthor}>{props.author}</Text>
+    <View style={styles.divider} />
+    <Text style={styles.itemDescription}>{props.description}</Text>
+  </View>
+);
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
+
+export default Post;
